@@ -12,7 +12,7 @@
   <div class="cp_iptxt">
     {!! Form::open(['route'=>'post.search']) !!}
     <label class="ef">
-      <input type="text" placeholder="かお探しですか" name="item">
+      <input type="text" placeholder="何かお探しですか" name="item">
       </label>
      
       <input type="submit" class="btn btn-danger" value="検索する">
