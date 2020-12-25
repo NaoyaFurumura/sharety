@@ -35,7 +35,7 @@ jobs:
       - run: npm run dev
       - run: sudo docker-php-ext-install pdo_mysql
       - run: echo "APP_KEY=" > .env.testing
-      - run: php artisan key:generate
+
       - run: php artisan migrate
       - run:
           name: php test
