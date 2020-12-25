@@ -3,9 +3,16 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:5.7-ram
+
+        environment:
+          - APP_ENV: testing
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          - DB_CONNECTION: sharety_test
     steps:
       - checkout
       - run: sudo composer self-update --1
+
       - restore_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
       - run: composer install -n --prefer-dist
@@ -26,6 +33,10 @@ jobs:
           paths:
             - node_modules
       - run: npm run dev
+      - run: sudo docker-php-ext-install pdo_mysql
+      - run: echo "APP_KEY=" > .env.testing
+      - run: php artisan key:generate
+      - run: php artisan migrate
       - run:
           name: php test
           command: vendor/bin/phpunit
