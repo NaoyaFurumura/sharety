@@ -90,9 +90,9 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-        'circle_testing' => [
+        'circleci_testing' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
+            'host' => 'db',
             'port' => '3306',
             'database' => 'sharety_test',
             'username' => 'root',
