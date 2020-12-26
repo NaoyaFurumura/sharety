@@ -22,13 +22,14 @@ class PostTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testview(){
-        $this->visit('/')->see('Sharety');
+    public function test_login(){
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->get('/');
+        $response->assertStatus(200)->assertViewIs('posts.index');
+        $this->assertAuthenticated($guard = null);
     }
-    /**
-     * @test
-     */
-    public function user_insert(){
+    
+    public function test_user_insert(){
         $user = new User();
         $user->email = "hurumura11@icloud.com";
         $user->password="bj12345";
@@ -37,10 +38,32 @@ class PostTest extends TestCase
         $this->assertTrue($result);
     }
 
+    public function test_logout(){
+
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
+        $this->assertTrue(Auth::check());
+
+        Auth::logout();
+
+        $this->assertGuest($guard = null);
+
+    }
+
     public function testfactory_user(){
         $users = factory(User::class,4)->create();
         $count = count($users);
         $this->assertEquals(4, $count);
     }
+
+    public function test_mypage(){
+        $user = factory(User::class)->create();
+        $response = $this->actingAs($user)->get(route('users.show',['id' => $user->id]));
+        $response->assertStatus(200)->assertViewIs('users.show');
+    } 
+
+    
+
+
 
 }
