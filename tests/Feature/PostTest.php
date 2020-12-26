@@ -25,19 +25,6 @@ class PostTest extends TestCase
     /**
      * @test
      */
-    public function user_insert(){
-        $user = new User();
-        $user->email = "hurumura11@icloud.com";
-        $user->password="bj12345";
-        $user->name="naoya";
-        $result = $user->save();
-        $this->assertTrue($result);
-    }
-
-    public function testfactory_user(){
-        $users = factory(User::class,4)->create();
-        $count = count($users);
-        $this->assertEquals(4, $count);
-    }
+    
 
 }
