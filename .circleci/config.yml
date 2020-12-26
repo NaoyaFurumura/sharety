@@ -5,11 +5,18 @@ jobs:
       - image: circleci/php:7.3-node-browsers
         environment:
           - APP_ENV: testing
-          - APP_DEBUG: true
-          - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - DB_CONNECTION: circleci_testing
-          - APP_KEY: base64:AeWzKkURqgUyr62BYqS7uj+k4ZXyI5ummLaDats5jiI=
-      - image: circleci/mysql:8.0
+          - DB_CONNECTION: mysql
+          - DB_PORT: 3306
+          - DB_HOST: 127.0.0.1
+          - DB_DATABASE: test_sharety
+          - DB_USERNAME: root
+          - DB_PASSWORD: dbpass
+      - image: circleci/mysql:5.7
+        environment:
+          - MYSQL_DATABASE: test_sharety
+          - MYSQL_USER: root
+          - MYSQL_ROOT_PASSWORD: dbpass
+          - MYSQL_PASSWORD: dbpass
 
     steps:
       - checkout
