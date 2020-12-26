@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    /**
+    /*
      * A basic feature test example.
      *
      * @return void
