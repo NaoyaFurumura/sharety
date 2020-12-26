@@ -8,7 +8,7 @@ jobs:
         environment:
           - APP_ENV: testing
           - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - DB_CONNECTION: sharety_test
+          - DB_CONNECTION: circleci_testing
     steps:
       - checkout
       - run: sudo composer self-update --1
