@@ -92,7 +92,7 @@ return [
         ],
         'circleci_testing' => [
             'driver' => 'mysql',
-            'host' => 'db',
+            'host' => 'mysql',
             'port' => '3306',
             'database' => 'sharety_test',
             'username' => 'root',
