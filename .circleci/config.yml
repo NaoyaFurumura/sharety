@@ -8,7 +8,7 @@ jobs:
       - APP_ENV: testing
       - APP_DEBUG: true
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
-      - DB_CONNECTION: circleci_testing
+      - DB_CONNECTION: mysql
       - APP_KEY: base64:AeWzKkURqgUyr62BYqS7uj+k4ZXyI5ummLaDats5jiI=
 
     steps:
