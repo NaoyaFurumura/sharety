@@ -8,5 +8,5 @@
     {{ $posts->links() }}
 </div>
 
-
+s
 @endsection
