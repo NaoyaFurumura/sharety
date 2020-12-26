@@ -4,12 +4,13 @@ jobs:
     docker:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/mysql:5.7
-        environment:
-          - APP_ENV: testing
-          - APP_DEBUG: true
-          - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - DB_CONNECTION: circleci_testing
-          - APP_KEY: base64:AeWzKkURqgUyr62BYqS7uj+k4ZXyI5ummLaDats5jiI=
+    environment:
+      - APP_ENV: testing
+      - APP_DEBUG: true
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
+      - DB_CONNECTION: circleci_testing
+      - APP_KEY: base64:AeWzKkURqgUyr62BYqS7uj+k4ZXyI5ummLaDats5jiI=
+
     steps:
       - checkout
       - run: sudo composer self-update --1
