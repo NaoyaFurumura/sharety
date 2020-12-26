@@ -34,4 +34,10 @@ class PostTest extends TestCase
         $this->assertTrue($result);
     }
 
+    public function testfactory_user(){
+        $users = factory(User::class,4)->create();
+        $count = count($users);
+        $this->assertEquals(4, $count);
+    }
+
 }
