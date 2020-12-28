@@ -16,6 +16,6 @@ class PostTest extends TestCase
     public function testpost投稿(){
         $response = $this->get('/');
         $response->assertStatus(200)
-        ->assertSee('sharety');
+        ->assertSee('Sharety');
     }
 }
