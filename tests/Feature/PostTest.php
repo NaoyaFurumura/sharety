@@ -14,6 +14,6 @@ class PostTest extends TestCase
      * @return void
      */
     public function testpost投稿(){
-        
+    
     }
 }
