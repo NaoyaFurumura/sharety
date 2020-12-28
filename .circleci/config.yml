@@ -4,11 +4,13 @@ jobs:
     docker:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/mysql:5.7-ram
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD: true
+          - MYSQL_DATABASE: test_sharety
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
       - DB_CONNECTION: circleci_testing
-      - DB_DATABASE: test_sharety
 
     steps:
       - checkout
