@@ -34,6 +34,9 @@ Sharetyは、あなたが必要ないもしくは現在使う機会がないも�
         - Route53
         - S3
         - Nginx
+- CD・CDツール
+    - Circle CI 自動テスト
+    - Circle CD 自動デプロイ(sshログイン)
 ## アプリケーション構成図
 ![aws構成図](aws_figure.png)
 ## 機能
