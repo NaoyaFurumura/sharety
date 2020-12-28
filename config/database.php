@@ -81,7 +81,7 @@ return [
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
@@ -92,9 +92,9 @@ return [
         ],
         'circleci_testing' => [
             'driver' => 'mysql',
-            'host' => 'db',
+            'host' => '127.0.0.1',
             'port' => '3306',
-            'database' => 'sharety',
+            'database' => 'test_sharety',
             'username' => 'root',
             'password' => 'dbpass',
             'charset' => 'utf8mb4',
