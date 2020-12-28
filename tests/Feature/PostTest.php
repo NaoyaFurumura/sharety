@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class PostTest extends TestCase
 {
@@ -43,7 +44,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
         $this->actingAs($user);
-        $this->assertTrue(\Auth::check());
+        $this->assertTrue(Auth::check());
 
         Auth::logout();
 
