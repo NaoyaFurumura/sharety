@@ -157,11 +157,13 @@
     <div class="price_product">
       <span class="item-price bold">￥{{ $post->price_per_day }}円</span>
       <span class="shipping-fee">送料などはご相談ください</span>
-  
+      
     @if($post->borrows->isEmpty())
+      @if(Auth::user()->id == $post->user_id)
     {{ Form::open(['route' => ['borrow.store', 'id' => $post->id], 'method' => 'post']) }}
         {!! Form::submit('取引済み',['class'=>'btn btn-danger']) !!}
     {{ Form::close() }}
+      @endif
     @else 
       <h2 style="font-weight:bold;color:#F06060;">取引済み</h2>
     @endif
