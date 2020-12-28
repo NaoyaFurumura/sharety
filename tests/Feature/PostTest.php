@@ -43,7 +43,7 @@ class PostTest extends TestCase
 
         $user = factory(User::class)->create();
         $this->actingAs($user);
-        $this->assertTrue(Auth::check());
+        $this->assertTrue(\Auth::check());
 
         Auth::logout();
 
