@@ -43,7 +43,11 @@
 
                 <div class="form-group">
                 <label for="state">商品状態</label>
-                {{Form::select('state',['新品に近い','普通','まぁまぁ使われている'],old('state'),['class'=>'form-control'])}}
+                <select class="form-control" id="" name="state">
+                  <option>新品に近い</option>
+                  <option>普通</option>
+                  <option>まぁまぁ使われてる</option>
+                </select>
                 </div>
 
                 <div class="form-group">
