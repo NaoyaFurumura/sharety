@@ -4,15 +4,13 @@ jobs:
     docker:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/mysql:5.7
-        environment:
-          - APP_ENV: testing
-          - APP_DEBUG: true
-          - MYSQL_ALLOW_EMPTY_PASSWORD: true
-          - DB_HOST: 127.0.0.1
-          - DB_PORT: 3306
-          - DB_CONNECTION: test_sharety
-          - DB_USERNAME: root
-          - DB_PASSWORD:
+               environment:
+                  - APP_ENV: testing
+                  - APP_DEBUG: true
+                  - MYSQL_ALLOW_EMPTY_PASSWORD: true
+                  - DB_HOST: 127.0.0.1
+                  - DB_PORT: 3306
+                  - DB_CONNECTION: test_sharety
     steps:
       - checkout
       - run: sudo composer self-update --1
