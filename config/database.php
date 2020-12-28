@@ -51,7 +51,7 @@ return [
             'database' => env('DB_DATABASE', 'test_sharety'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => '/tmp/mysql.sock',
+            'unix_socket' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
