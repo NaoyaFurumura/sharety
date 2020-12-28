@@ -8,6 +8,7 @@ jobs:
       - APP_DEBUG: true
       - APP_ENV: testing
       - DB_CONNECTION: circleci_testing
+      - DB_DATABASE: test_sharety
 
     steps:
       - checkout
