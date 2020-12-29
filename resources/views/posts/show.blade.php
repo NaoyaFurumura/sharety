@@ -10,7 +10,11 @@
   <div class="box">
     <div class="title" style="text-align:center">
       <span>{{ $post->name }}</span>
+      @if(Auth::check())
+        @if(Auth::id()==$post->user_id)
       <i class="fa fa-edit" aria-hidden="true" data-toggle="modal" data-target="#editModal" style=""></i>
+        @endif
+      @endif
     </div>
     
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -155,7 +159,7 @@
       
     </div>
     <div class="price_product">
-      <span class="item-price bold">￥{{ $post->price_per_day }}円</span>
+      <span class="item-price bold">{{ $post->price_per_day }}円</span>
       <span class="shipping-fee">送料などはご相談ください</span>
       
     @if($post->borrows->isEmpty())
