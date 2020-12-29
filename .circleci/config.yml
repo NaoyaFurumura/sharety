@@ -14,7 +14,6 @@ jobs:
 
     steps:
       - checkout
-      - run: composer self-update --update-keys
       - run: sudo composer self-update --1
 
       - restore_cache:
